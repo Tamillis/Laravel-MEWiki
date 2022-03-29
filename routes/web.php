@@ -1,6 +1,11 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AboutController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\WelcomeController;
+use App\Http\Controllers\ContributeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,5 +19,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('home');
+})->name('home');
+
+Route::get('/welcome', [WelcomeController::class, 'index'])->name('welcome');
+
+Route::get('/about', [AboutController::class, 'index'])->name('about');
+
+Route::get('/login', [LoginController::class, 'index'])->name('login');
+
+Route::get('/contribute', [ContributeController::class, 'index'])->name('contribute');
+Route::post('/contribute', [ContributeController::class, 'store']);
