@@ -20,6 +20,13 @@ class ContributeController extends Controller
      */
     public function store(Request $request)
     {
+        //validate!
+        $this->validate($request, [
+            'title' => 'required|unique:docs|max:255',
+            'category' => 'required|max:255',
+            'body' => 'required'
+        ]);
+
         Doc::create([
             'title' => $request->title,
             'category' => $request->category,

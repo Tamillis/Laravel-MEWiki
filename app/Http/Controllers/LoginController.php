@@ -10,4 +10,22 @@ class LoginController extends Controller
     {
         return view('login');
     }
+
+    public function store(Request $request)
+    {
+        //validate
+        $request->validate([
+            'username' => 'required|max:255',
+            'password' => 'required|max:255',
+        ]);
+
+        //login
+        if(!auth()->attempt([
+            'username' => $request->username,
+            'password' => $request->password,
+        ])) return back();
+
+        //redirect
+        return redirect()->route('home');
+    }
 }

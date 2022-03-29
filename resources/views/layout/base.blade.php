@@ -16,8 +16,16 @@
     @section('topbar')
         <div class="">
             <div class="fixed right-0 top-0">
-                <a href="{{ route('login') }}" class="px-2 border-x border-b rounded-b-md border-green-900 hover:bg-black/10">Login</a>
-                <a href="mailto:bellaby1993@hotmail.co.uk?subject=MEWiki contact request" class="px-2 border-l border-b rounded-bl-md border-green-900 hover:bg-black/10">Contact</a>
+                @guest
+                    <a href="{{ route('login') }}"
+                        class="px-2 border-x border-b rounded-b-md border-green-900 hover:bg-black/10">Login</a>
+                @endguest
+                @auth
+                    <a href="{{ route('logout') }}"
+                        class="px-2 border-x border-b rounded-b-md border-green-900 hover:bg-black/10">Logout</a>
+                @endauth
+                <a href="mailto:bellaby1993@hotmail.co.uk?subject=MEWiki contact request"
+                    class="px-2 border-l border-b rounded-bl-md border-green-900 hover:bg-black/10">Contact</a>
             </div>
             <div class="bg-green-300 flex justify-center">
                 <h1

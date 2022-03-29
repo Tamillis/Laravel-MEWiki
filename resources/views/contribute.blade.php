@@ -19,11 +19,20 @@
         <form action="#" method="POST" class="flex justify-center flex-col">
             @csrf
             <label for="title">Title</label>
-            <input type="text" name="title" id="title" placeholder="New Title" class="mb-2">
+            <input type="text" name="title" id="title" placeholder="New Title" class="mb-2 @error('title') border-red-2 @enderror" value="{{old('title')}}">
+            @error('$title')
+                <p class="text-red-500 italic text-sm">{{$message}}</p>
+            @enderror
             <label for="category">Category</label>
-            <input type="text" name="category" id="category" placeholder="None" class="mb-2">
+            <input type="text" name="category" id="category" placeholder="None" class="mb-2 @error('category') border-red-2 @enderror" value="{{old('category')}}">
+            @error('$category')
+                <p class="text-red-500 italic text-sm">{{$message}}</p>
+            @enderror
             <label for="body" class="sr-only">Body</label>
-            <textarea name="body" id="body" cols="30" rows="12" placeholder="Main content here..." class="mb-2 resize-y"></textarea>
+            <textarea name="body" id="body" cols="30" rows="12" placeholder="Main content here..." class="mb-2 resize-y @error('body') border-red-2 @enderror" value="{{old('body')}}"></textarea>
+            @error('$body')
+                <p class="text-red-500 italic text-sm">{{$message}}</p>
+            @enderror
             <button type="submit"
                 class="w-fit self-end px-2 border-emerald-900 border rounded-md hover:bg-black/10">Submit</button>
         </form>

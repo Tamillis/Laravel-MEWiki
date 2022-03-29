@@ -15,9 +15,10 @@ return new class extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             //update this table to only need username, a new field
-            //and password which is hashed
+            $table->string('username')->unique();
 
             //drop all other non-laravellian bits like email etc
+            $table->dropColumn(['name', 'email', 'email_verified_at']);
         });
     }
 
@@ -28,6 +29,14 @@ return new class extends Migration
      */
     public function down()
     {
-        //
+        Schema::table('users', function (Blueprint $table) {
+            //remove the added username
+            $table->dropColumn('username');
+
+            //restore the columns from the 2014/10/12 User table migration
+            $table->string('name');
+            $table->string('email')->unique();
+            $table->timestamp('email_verified_at')->nullable();
+        });
     }
 };

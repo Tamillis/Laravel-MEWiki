@@ -27,6 +27,7 @@ Route::get('/welcome', [WelcomeController::class, 'index'])->name('welcome');
 Route::get('/about', [AboutController::class, 'index'])->name('about');
 
 Route::get('/login', [LoginController::class, 'index'])->name('login');
+Route::post('/login', [LoginController::class, 'store']);
 
 Route::get('/contribute', [ContributeController::class, 'index'])->name('contribute');
 Route::post('/contribute', [ContributeController::class, 'store']);
