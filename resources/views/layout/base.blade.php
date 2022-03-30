@@ -22,7 +22,8 @@
                 @endguest
                 @auth
                     <a href="{{ route('logout') }}"
-                        class="px-2 border-x border-b rounded-b-md border-green-900 hover:bg-black/10">Logout</a>
+                        class="px-2 border-x border-b rounded-b-md border-green-900 hover:bg-black/10">Logout
+                        {{ auth()->user()->username }}</a>
                 @endauth
                 <a href="mailto:bellaby1993@hotmail.co.uk?subject=MEWiki contact request"
                     class="px-2 border-l border-b rounded-bl-md border-green-900 hover:bg-black/10">Contact</a>
@@ -33,7 +34,7 @@
                     @yield('topbar-title')</h1>
             </div>
 
-            <div class="bg-green-300 rounded-br-md w-fit p-1 border-t-2 border-green-900">
+            <div class="bg-green-300 rounded-br-md w-fit p-1 border-2 border-l-0 border-green-900 -translate-y-0.5">
                 <ul class="p-2 inline">
                     <li class="inline px-2 border-green-900 border rounded-md hover:bg-black/10"><a
                             href="{{ route('home') }}">Home
@@ -41,9 +42,11 @@
                     <li class="inline px-2 border-green-900 border rounded-md hover:bg-black/10"><a
                             href="{{ route('about') }}">About
                             Page</a></li>
-                    <li class="inline px-2 border-green-900 border rounded-md hover:bg-black/10"><a
-                            href="{{ route('contribute') }}">Contribute
-                            Page</a></li>
+                    @auth
+                        <li class="inline px-2 border-green-900 border rounded-md hover:bg-black/10"><a
+                                href="{{ route('contribute') }}">Contribute
+                                Page</a></li>
+                    @endauth
                 </ul>
             </div>
         </div>

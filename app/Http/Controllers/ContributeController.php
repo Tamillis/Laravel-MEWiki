@@ -27,7 +27,7 @@ class ContributeController extends Controller
             'body' => 'required'
         ]);
 
-        Doc::create([
+        $request->user()->docs()->create([
             'title' => $request->title,
             'category' => $request->category,
             'body' => $request->body,

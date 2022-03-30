@@ -447,19 +447,16 @@ Ensure the default browser behavior of the `hidden` attribute.
 .m-4 {
   margin: 1rem;
 }
-.my-1 {
-  margin-top: 0.25rem;
-  margin-bottom: 0.25rem;
-}
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
 }
+.my-1 {
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+}
 .mb-2 {
   margin-bottom: 0.5rem;
-}
-.mt-1 {
-  margin-top: 0.25rem;
 }
 .inline {
   display: inline;
@@ -472,17 +469,26 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: -moz-fit-content;
   width: fit-content;
 }
-.w-5\/6 {
-  width: 83.333333%;
-}
-.w-auto {
-  width: auto;
-}
 .w-full {
   width: 100%;
 }
 .w-3\/6 {
   width: 50%;
+}
+.w-auto {
+  width: auto;
+}
+.-translate-y-1 {
+  --tw-translate-y: -0.25rem;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.-translate-y-0\.5 {
+  --tw-translate-y: -0.125rem;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.-translate-y-0 {
+  --tw-translate-y: -0px;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 .resize-y {
   resize: vertical;
@@ -537,6 +543,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .border-t-2 {
   border-top-width: 2px;
+}
+.border-l-0 {
+  border-left-width: 0px;
 }
 .border-emerald-900 {
   --tw-border-opacity: 1;
@@ -593,21 +602,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 .hover\:bg-black\/10:hover {
   background-color: rgb(0 0 0 / 0.1);
 }
-@media (min-width: 640px) {
-
-  .sm\:w-4\/6 {
-    width: 66.666667%;
-  }
-}
 @media (min-width: 768px) {
 
   .md\:mx-auto {
     margin-left: auto;
     margin-right: auto;
-  }
-
-  .md\:w-4\/6 {
-    width: 66.666667%;
   }
 
   .md\:max-w-3xl {
