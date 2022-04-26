@@ -28,6 +28,11 @@
             @error('$category')
                 <p class="text-red-500 italic text-sm">{{$message}}</p>
             @enderror
+            <label for="imgURL">Image URL</label>
+            <input type="text" name="imgURL" id="imgURL" class="mb-2 @error('imgURL') border-red-2 @enderror" value="{{old('imgURL')}}">
+            @error('$imgURL')
+                <p class="text-red-500 italic text-sm">{{$message}}</p>
+            @enderror
             <label for="body" class="sr-only">Body</label>
             <textarea name="body" id="body" cols="30" rows="12" placeholder="Main content here..." class="mb-2 resize-y @error('body') border-red-2 @enderror" value="{{old('body')}}"></textarea>
             @error('$body')

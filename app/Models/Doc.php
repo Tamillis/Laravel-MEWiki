@@ -22,6 +22,7 @@ class Doc extends Model
         'title',
         'category',
         'body',
+        'imgURL'
     ];
 
     public function user() {

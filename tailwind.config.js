@@ -5,7 +5,19 @@ module.exports = {
     "./resources/**/*.vue",
   ],
   theme: {
-    extend: {},
+    extend: {
+      screens: {
+        //extra small screen for small mobiles
+        'xs': '512px',
+      },
+      colors: {
+        'bg': '#fbfcfc',
+        'main': '#ECFFDC',
+        'highlight': '#efdcff',
+        'shade': '#939f89',
+        'dark': '#586052'
+      }
+    },
   },
   plugins: [],
 }

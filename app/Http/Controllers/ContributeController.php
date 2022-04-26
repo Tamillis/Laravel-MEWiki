@@ -24,13 +24,15 @@ class ContributeController extends Controller
         $this->validate($request, [
             'title' => 'required|unique:docs|max:255',
             'category' => 'required|max:255',
-            'body' => 'required'
+            'body' => 'required',
+            'imgURL' => ''
         ]);
 
         $request->user()->docs()->create([
             'title' => $request->title,
             'category' => $request->category,
             'body' => $request->body,
+            'imgURL' => $request->imgURL
         ]);
 
         return back();
