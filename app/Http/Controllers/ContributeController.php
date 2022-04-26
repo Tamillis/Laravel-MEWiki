@@ -25,12 +25,12 @@ class ContributeController extends Controller
             'title' => 'required|unique:docs|max:255',
             'category' => 'required|max:255',
             'body' => 'required',
-            'imgURL' => ''
+            'imgURL' => 'max:255'
         ]);
 
         $request->user()->docs()->create([
             'title' => $request->title,
-            'category' => $request->category,
+            'category' => strtolower($request->category),
             'body' => $request->body,
             'imgURL' => $request->imgURL
         ]);

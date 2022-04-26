@@ -32,9 +32,14 @@
                 <a href="mailto:bellaby1993@hotmail.co.uk?subject=MEWiki contact request"
                     class="px-2 border-l border-b rounded-bl-md border-shade hover:bg-black/10">Contact</a>
             </div>
-            <div class="bg-main flex justify-center">
-                <h1 class="text-2xl  text-dark p-2 underline center border-x-2 border-b-2 rounded-b-md border-shade">
-                    @yield('topbar-title')</h1>
+            <div class="bg-main flex sm:justify-center">
+                <div class="border-x-2 border-b-2 rounded-b-md border-shade w-fit">
+                    <h1 class="text-3xl md:text-5xl  text-dark p-2 underline text-center">
+                        Materium Existentiae Wiki</h1>
+                    <h2
+                        class="text-2xl md:text-3xl  text-dark p-2 underline text-center">
+                        @yield('topbar-title')</h2>
+                </div>
             </div>
 
             <div class="bg-main rounded-br-md w-fit p-1 border-2 border-l-0 border-shade -translate-y-0.5">

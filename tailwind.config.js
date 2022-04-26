@@ -16,6 +16,9 @@ module.exports = {
         'highlight': '#efdcff',
         'shade': '#939f89',
         'dark': '#586052'
+      },
+      backgroundImage: {
+        'me-map': 'https://1drv.ms/u/s!Aq2B34oritBLpihLhlBJC1i-Sr7B'
       }
     },
   },
